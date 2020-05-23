@@ -131,3 +131,5 @@ STATICFILES_DIR = [
 PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
 MEDIA_ROOT = PROJECT_ROOT + '/static/'
 MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = '/'

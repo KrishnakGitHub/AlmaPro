@@ -4,10 +4,11 @@
 
 <h1>INDEX PAGE</h1>
 
-<h1> <DASHBOARD/> </h1>
-
-<p>{{ my_var }}</p>
-<p>{{ years }}</p>
-<p>{{ array_city }}</p>
+<h1>This is the index page!</h1>
+    {% if user.is_authenticated %}
+    <h2>You name is: {{ user.username }}</h2>
+    {% else %}
+    <h2>You are not logged in.</h2>
+    {% endif %}
 
 {% endblock %}

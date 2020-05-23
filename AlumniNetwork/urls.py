@@ -19,10 +19,9 @@ from django.urls import path
 from AlumniNetwork import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.home),
+    path('home/', views.home),
     path('about/', views.about),
-    path('contact', views.contact),
+    path('contact/', views.contact),
     path('news/',views.news),
     path('data/',views.data),
 ]
