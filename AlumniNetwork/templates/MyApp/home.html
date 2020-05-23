@@ -4,5 +4,11 @@
 
 <h1>HOME PAGE</h1>
 
+ {% if user.is_authenticated %}
+    <h2>You name is: {{ user.username }}</h2>
+    {% else %}
+    <h2>You are not logged OUT....</h2>
+    {% endif %}
+
 {% endblock %}
 
