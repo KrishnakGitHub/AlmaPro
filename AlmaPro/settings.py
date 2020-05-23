@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'AlumniNetwork',
     'JobApp',
-    'Auth',
+    'authentication',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

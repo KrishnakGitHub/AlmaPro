@@ -20,6 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('AlumniNetwork.urls')),
     path('jba/', include('JobApp.urls')),
-    path('Auth/',include('Auth.urls')),
+    path('authentication/',include('authentication.urls'))
 
 ]
