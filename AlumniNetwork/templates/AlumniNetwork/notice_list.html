@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Notice List</h1>
+<form class="form-inline">
+<input class="form-control mr-3" placeholder="Notice To Search" type="text" name="si" value="{{ request.GET.si }}">
+<input class="btn btn-dark" type="submit" value="Search" style="width:10%">
+</form>
+<br>
+
+<div class="container-fluid mb-3 p-3 " style="background-color:#eee">
+<!--Jion Us Container-->
+<div class="container">
+
+{% for n1 in notice_list %}
+<div class="container-fluid">
+<div class="row mb-3">
+<div class="col-sm-5 mb-0 p-5 text-center text-white" style="padding:180px;background-color:#26457A;">
+<h1><td>{{ n1.subject }}</td></h1>
+<p><td>{{ n1.cr_date }}</td></p>
+<a type="button" class="bg-danger btn text-white" href="/notice/{{ n1.id }}"><td>Read More</td></a>
+</div>
+<div class="col-sm-7 mx-auto mb-0 bg-primary text-center" style="background-image:url('Flat-Mountains.svg');">
+<blockquote class="text-white"><br><br><br><h2>{{ n1.branch.name }}</h2></blockquote>
+</div>
+</div></div>
+</div>
+	</tr>
+{% endfor %}
+</div>
+
+
+
+
+<table class="table table-striped table-hover">
+<thead class="thead-dark">
+<tr>
+<th>Subject</th>
+<th>Created Date</th>
+<th>Branch</th>
+<th>Action</th>
+</tr>
+</thead>
+{% for n1 in notice_list %}
+<tr>
+<td>{{ n1.subject }}</td>
+<td>{{ n1.cr_date }}</td>
+<td>{{ n1.branch.name }}</td>
+<td><a href="/notice/{{ n1.id }}" class="btn btn-dark btn-sm">Read More</a></td>
+	</tr>
+{% endfor %}
+</table>
+{% endblock %}

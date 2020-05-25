@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ notice.subject }}</h1>
+<hr>
+<table class="table table-striped table-hover">
+	<tr><th>Notice Message</th><td>{{ notice.msg }}</td></tr>
+	<tr><th>Branch</th><td>{{ notice.branch }}</td></tr>
+	<tr><th>Created Date</th><td>{{ notice.cr_date }}</td></tr>
+</table>
+<a class="btn btn-dark" href='/college/notice'>Back</a>
+
+{% endblock %}

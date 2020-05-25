@@ -9,7 +9,7 @@ from django.contrib.auth import authenticate, login
 
 
 def index(request):
-    return render(request, 'MyApp/index.html')
+    return render(request, 'AlumniNetwork/index.html')
 
 
 def register(request):

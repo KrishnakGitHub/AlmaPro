@@ -5,21 +5,92 @@
     <meta charset="UTF-8">
     <title>Base-Alumni Association</title>
     <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+input{
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+}
+
+input:hover,
+.btn:hover {
+  opacity: 1;
+}
+
+input[type=submit]{
+background-color:#45a049;
+}
+
+input[type=submit]:hover {
+  color: #ffff;
+}
+</style>
 </head>
 <body>
-<h1>base</h1>
-<a href="">Home</a>
-<a href="/about">About</a>
-<a href="/contact">Contact</a>
-<a href="/news">NEWS</a>
-<a href="/accounts/login">Login</a>
-<a href="/authentication/register">Register</a>
-{% if user.is_authenticated %}
-<a href="/accounts/logout">Logout</a>
-{% endif %}
+<div class="w3-top">
+<div class="col-lg bg-light">
+	<div class="row">
+
+		<div class="col-sm-9">
+			<ul class="text-wrap">
+				<img src="https://sdukng.dm.files.1drv.com/y4mBzGaVctldJrwLc8IOHETtVuHRLYE-WpgA8rqeWEv9qOV3yp9VD56WbBIVyYSkRYXcNYN8590Uwyl6_dmW6pDmvr1SVm8FhDFxkC_5-O2DGBltzuetiGj-A4MGXKyALHxoIHCwuCRSsMwkpnygJNa1svWQ-9A2C8ZGZOxuAoU_d7BIDBDADeYyrj8Tx1XllqzBwLfNQw19jQGOvShkRS7Gg?width=317&height=174&cropmode=none" width="20%" style="float:left;margin-right:10px;">
+			</ul>
+		</div><br><br>
+
+		<div class="col-sm-3">
+
+		</div>
+
+	</div>
+</div>
+
+<!-- Navbar -->
+
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="/about" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
+    <a href="/news" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">News</a>
+    <a href="/contact" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
+      {% if user.is_authenticated %}
+        <a href="/accounts/logout" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Logout</a>
+            <a href="/dashboard" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Dashboard</a>
+      {% else %}
+          <a href="/accounts/login" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">LogIn</a>
+      {% endif %}
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="/about" class="w3-bar-item w3-button w3-padding-large">About</a>
+    <a href="/contact" class="w3-bar-item w3-button w3-padding-large">Contact</a>
+    <a href="/news" class="w3-bar-item w3-button w3-padding-large">News</a>
+    <a href="/accounts/login" class="w3-bar-item w3-button w3-padding-large">LogIn</a>
+      {% if user.is_authenticated %}
+        <a href="/accounts/logout" class="w3-bar-item w3-button w3-padding-large">Logout</a>
+      {% else %}
+          <a href="/accounts/login" class="w3-bar-item w3-button w3-padding-large">LogIn</a>
+      {% endif %}
+  </div>
+</div>
+
 {% block content %}
 
 {% endblock %}
+
+<a href="notice/">Notice</a>
 </body>
 </html>

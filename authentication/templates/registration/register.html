@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>REGISTER</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+<div class="card-body w-50 mx-auto p-5 m-5" style="border:2px solid gray;">
+<h3 class="card-title"><b>REGISTER</b></h3><hr>
 <form method="post" action="{% url 'register' %}">
 
     {% csrf_token %}
@@ -15,6 +14,7 @@
 
     {{ form }}
     <input type="submit" value="Register">
+    New User!, Please <a href="/accounts/login">login here</a>
 </form>
-</body>
-</html>
+</div></div>
+{% endblock %}

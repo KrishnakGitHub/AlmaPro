@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>LogIn</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
 
 {% if form.errors %}
 <p>Somthing went wrong........!</p>
@@ -13,18 +9,19 @@
 {% if next %}
 <p> No Entry....! </p>
 {% endif %}
-
-
+<div class="container">
+<div class="card-body w-50 mx-auto p-5 m-5" style="border:2px solid gray;">
+<h3 class="card-title"><b>LOGIN</b></h3><hr>
 <form method="post" action="{% url 'login' %}">
 
     {% csrf_token %}
-    <p>UserName : </p> {{ form.username }}
-    <p>Password : </p> {{ form.password }}
+    <p>UserName :  {{ form.username }}</p>
+    <p>Password :  {{ form.password }}</p>
 
     <input type="submit" value="login">
     <input type="hidden" name="next" value="{{ next }}">
-
+New User!, Please <a href="/authentication/register">Register</a>
 </form>
+</div></div>
 
-</body>
-</html>
+{% endblock %}

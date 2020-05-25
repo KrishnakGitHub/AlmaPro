@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+<style>
+body{
+background:linear-gradient(-45deg,#00ffdb,#ff00afc2);
+}
+li{
+list-style-type:none;
+}
+a{text-decoration:none;
+color:#fff;
+}
+a:hover{
+text-decoration:none;
+color:#fff;
+cursor: pointer;
+}
+</style>
+
+{% block content %}
+
+
+<body>
+
+	<div class="container container container position-sticky w-75">
+	<div class="container bg-light m-5 mx-auto" style="border-radius:20px 20px 20px 0px;">
+		<div class="row" style="border-radius:20px 20px 20px 0px;">
+			<div class="col-sm-4 bg-danger h-auto " style="border-radius:20px 0px 20px 0px;">
+				<div class="text-uppercase font-weight-bold text-center text-light m-5"><h1>E-RESUME</h1></div>
+				<div class="mx-auto w-50">
+				<img src="im.jpg" alt="wheree...!" class="img-thumbnail">
+				</div>
+				<ul class="p-5">
+					<li><a class="button1 text-light" onclick="openCity('about')">About</a></li><hr>
+					<li><a class="button1 text-light" onclick="openCity('experience')">Experience</a></li><hr>
+					<li><a class="button1 text-light" onclick="openCity('skills')">Skills</a></li><hr>
+					<li><a class="button1 text-light" onclick="openCity('award')">Awards and Certifications</a></li><hr>
+					<li><a class="button1 text-light" onclick="openCity('project')">Projects</a></li>
+				
+				</ul>
+			</div>
+			<div class="col" style="border-radius:20px 20px 0px 0px;">
+			
+				<div class="container">
+					<div id="about" class="page-content city" style="display:none">
+					<h1 class="text-uppercase font-weight-bold m-5">About</h1><hr>
+						<ul class="text-info bg-light">
+							<li class="text-uppercase font-weight-bold"><h1>{{myprofile.name}}</h1></li>
+							<li class="text-lowercase font-weight-bold"><p>{{myprofile.address}}4</p><li>
+							<li class="text-uppercase font-weight-bold"><p>{{myprofile.age}}</p></li>
+						</ul>
+					</div>
+					
+					<div id="experience" class="page-content city" style="display:none">
+					{{myprofile.description}}
+					</div>
+					
+					<div id="skills" class="page-content city" style="display:none">
+					skill
+					</div>
+					
+					<div id="award" class="page-content city" style="display:none">
+					award
+					</div>
+					
+					<div id="project" class="page-content city" style="display:none">
+					project
+					</div>
+					
+				</div>
+			
+			</div>
+		</div>
+	</div>
+	</div>
+	<script>
+function openCity(cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  document.getElementById(cityName).style.display = "block";  
+}
+</script>
+</body>
+
+
+
+<div class="p-5">
+	<h1 class="myhead2">{{myprofile.name}}</h1>
+	<hr>
+<div class="row">
+	<div class="col-sm-6">
+	<p><strong>Age :: </strong> {{myprofile.age}}</p>
+	<p><strong>Gender :: </strong> {{myprofile.gender}}</p>
+	<p><strong>Address :: </strong> {{myprofile.address}}</p>
+	<p><strong>Status :: </strong> {{myprofile.status}}</p>
+	<p><strong>Phone No :: </strong> {{myprofile.phone_no}}</p>
+	<p><strong>Description :: </strong> {{myprofile.description}}</p>
+	</div>
+	<div class="col-sm-6">
+		<img class="img-fluid" src="/media/{{myprofile.pic}}" />
+	</div>
+</div>
+<a href="/alumni/myprofile" class="btn btn-dark">Back</a>
+</div>
+{% endblock %}

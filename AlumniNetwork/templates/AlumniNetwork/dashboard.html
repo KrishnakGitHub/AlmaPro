@@ -2,13 +2,20 @@
 
 {% block content %}
 
-<h1>HOME PAGE</h1>
+<h1>DASHBOARD</h1>
 
- {% if user.is_authenticated %}
+{% if user.is_authenticated %}
     <h2>You name is: {{ user.username }}</h2>
     {% else %}
     <h2>You are not logged OUT....</h2>
-    {% endif %}
+{% endif %}
+<hr>
+
+{% for n1 in users %}
+
+<h3>{{ n1.username }}</h3>
+
+{% endfor %}
+
 
 {% endblock %}
-
